@@ -1,10 +1,17 @@
-.button {
+
+.light-mode {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.4s;
+}
+
+.light-mode .button {
     display: inline-block;
     padding: 10px;
     margin: 5px;
     background-color: #ccc;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.4s;
 }
 
 .button.selected {
@@ -17,16 +24,21 @@
     font-weight: bold;
 }
 
-
-/* Estilos para el modo oscuro */
 .dark-mode {
     background-color: #121212;
     color: #fff;
+    transition: background-color 0.4s;
 }
 
 .dark-mode .button {
+      display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.4s;
     background-color: #1E1E1E;
-    color: #E1E1E1; /* Cambiar el color del texto para que sea legible en el fondo oscuro */
+    color: #E1E1E1;
 }
 
 .dark-mode .button.selected {
@@ -42,5 +54,4 @@
     padding: 10px;
     margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
