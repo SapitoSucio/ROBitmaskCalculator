@@ -1,0 +1,46 @@
+.button {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button.selected {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+.dark-mode .button {
+    background-color: #1E1E1E;
+    color: #E1E1E1; /* Cambiar el color del texto para que sea legible en el fondo oscuro */
+}
+
+.dark-mode .button.selected {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+#darkModeButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
