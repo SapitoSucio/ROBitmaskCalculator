@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    resultElement.addEventListener('click', function () {
+        copyToClipboard(resultElement.textContent);
+        showCopyMessage();
+    });
+
     darkModeButton.addEventListener('click', function () {
         document.body.classList.toggle('dark-mode');
         document.body.classList.toggle('light-mode');
@@ -26,6 +31,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var bitmaskString = bitmask.toString(16).padStart(4, '0');
         resultElement.textContent = 'monster_ai: 0x' + bitmaskString;
+    }
+
+    function copyToClipboard(text) {
+        var tempInput = document.createElement("input");
+        var hexValue = text.replace('monster_ai: ', '');
+        tempInput.value = hexValue;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+    }
+
+    function showCopyMessage() {
+        var copyMessage = document.createElement('div');
+        copyMessage.textContent = 'Copied to clipboard';
+        copyMessage.className = 'copy-message';
+        document.body.appendChild(copyMessage);
+        setTimeout(function () {
+            document.body.removeChild(copyMessage);
+        }, 2000);
     }
 
     // Initial calculation on page load
